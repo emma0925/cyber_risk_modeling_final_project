@@ -19,6 +19,8 @@ function App() {
           <a href="#protect">Protect Yourself</a>
           <a href="#faq">FAQ</a>
           <a href="#chatbot">AI Assistant</a>
+          <a href="/cyber_risk_modeling_final_project/cmmc-giftcard.html" 
+          target="_blank" rel="noopener noreferrer"></a>
         </nav>
       </header>
 
