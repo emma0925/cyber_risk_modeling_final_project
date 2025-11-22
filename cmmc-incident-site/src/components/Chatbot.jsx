@@ -25,7 +25,7 @@ const Chatbot = () => {
 
     try {
       // Replace this with your real backend call when ready
-      const res = await fetch("http://localhost:4000/api/chat", {
+      const res = await fetch("http://172.26.80.246:4000/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ messages: updatedMessages }),
