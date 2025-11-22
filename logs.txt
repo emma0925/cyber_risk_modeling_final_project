@@ -4,3 +4,9 @@ Password: 88888888888
 Timestamp: 2025-11-22T19:42:34.589Z
 =========================================
 
+=== CMMC PHISHING TRAINING SIMULATION ===
+Username: emma0925
+Password: 12345678
+Timestamp: 2025-11-22T20:25:47.754Z
+=========================================
+
