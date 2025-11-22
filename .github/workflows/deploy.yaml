@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: codebase/cmmc-incident-site  # 👈 IMPORTANT
+        working-directory: /cmmc-incident-site  # 👈 IMPORTANT
 
     steps:
       - name: Checkout
