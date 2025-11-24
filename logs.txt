@@ -16,3 +16,15 @@ Password: amazing
 Timestamp: 2025-11-22T21:24:38.751Z
 =========================================
 
+=== CMMC PHISHING TRAINING SIMULATION ===
+Username: ezhuang@andrew.cmu.edu
+Password: 12452
+Timestamp: 2025-11-22T21:29:59.707Z
+=========================================
+
+=== CMMC PHISHING TRAINING SIMULATION ===
+Username: nsimhadr
+Password: sdfsafasfdf
+Timestamp: 2025-11-22T21:30:39.472Z
+=========================================
+

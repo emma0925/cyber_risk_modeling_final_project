@@ -1,0 +1,78 @@
+Country,Year,Attack Type,Target Industry,Financial Loss (in Million $),Number of Affected Users,Attack Source,Security Vulnerability Type,Defense Mechanism Used,Incident Resolution Time (in Hours)
+Brazil,2015,Ransomware,Healthcare,61.91,961557,Insider,Unpatched Software,Firewall,64
+Australia,2020,Ransomware,Healthcare,58.91,207842,Nation-state,Social Engineering,Antivirus,40
+UK,2022,Ransomware,Healthcare,75.67,413293,Hacker Group,Zero-day,Antivirus,27
+India,2016,Ransomware,Healthcare,37.12,113404,Hacker Group,Social Engineering,Antivirus,11
+Russia,2019,Ransomware,Healthcare,21.95,217438,Hacker Group,Social Engineering,Firewall,14
+China,2021,Ransomware,Healthcare,32.72,994243,Hacker Group,Social Engineering,Firewall,54
+Japan,2023,Ransomware,Healthcare,33.66,410385,Unknown,Zero-day,Encryption,71
+France,2020,Ransomware,Healthcare,3.27,178268,Nation-state,Unpatched Software,Antivirus,2
+Germany,2023,Ransomware,Healthcare,84.92,152814,Nation-state,Social Engineering,AI-based Detection,33
+USA,2019,Ransomware,Healthcare,89.81,46960,Nation-state,Zero-day,AI-based Detection,16
+Japan,2021,Ransomware,Healthcare,77.33,380970,Nation-state,Weak Passwords,Encryption,44
+India,2020,Ransomware,Healthcare,10.46,32616,Unknown,Unpatched Software,Firewall,63
+USA,2018,Ransomware,Healthcare,51.71,858128,Hacker Group,Social Engineering,Antivirus,35
+Germany,2023,Ransomware,Healthcare,54.79,393779,Nation-state,Weak Passwords,Encryption,39
+Russia,2018,Ransomware,Healthcare,24.06,327566,Unknown,Unpatched Software,AI-based Detection,6
+Germany,2023,Ransomware,Healthcare,28.18,707214,Unknown,Weak Passwords,AI-based Detection,11
+USA,2016,Ransomware,Healthcare,99.19,745103,Insider,Unpatched Software,Encryption,8
+India,2021,Ransomware,Healthcare,76.83,603402,Insider,Zero-day,AI-based Detection,57
+Russia,2024,Ransomware,Healthcare,98.25,877571,Insider,Weak Passwords,Antivirus,19
+Japan,2020,Ransomware,Healthcare,41.88,93314,Hacker Group,Unpatched Software,VPN,24
+Australia,2021,Ransomware,Healthcare,91.8,125309,Unknown,Social Engineering,Antivirus,13
+India,2015,Ransomware,Healthcare,1.48,818172,Unknown,Social Engineering,VPN,30
+Australia,2022,Ransomware,Healthcare,17.58,18399,Unknown,Zero-day,Firewall,14
+Brazil,2021,Ransomware,Healthcare,78.08,989151,Unknown,Social Engineering,AI-based Detection,2
+France,2020,Ransomware,Healthcare,37.36,745273,Insider,Zero-day,Firewall,67
+UK,2018,Ransomware,Healthcare,60.01,193378,Unknown,Unpatched Software,Encryption,32
+Germany,2022,Ransomware,Healthcare,61.99,496292,Nation-state,Zero-day,AI-based Detection,21
+India,2020,Ransomware,Healthcare,70.67,564046,Insider,Social Engineering,Firewall,39
+Brazil,2024,Ransomware,Healthcare,6.67,553944,Hacker Group,Social Engineering,Encryption,64
+Germany,2017,Ransomware,Healthcare,32.0,175755,Insider,Weak Passwords,Firewall,30
+Russia,2016,Ransomware,Healthcare,5.18,719532,Insider,Unpatched Software,VPN,10
+Russia,2023,Ransomware,Healthcare,15.08,677971,Insider,Social Engineering,VPN,51
+Australia,2024,Ransomware,Healthcare,18.16,200307,Unknown,Social Engineering,Antivirus,59
+USA,2018,Ransomware,Healthcare,27.37,543437,Unknown,Unpatched Software,Firewall,20
+France,2022,Ransomware,Healthcare,42.33,657939,Nation-state,Social Engineering,Antivirus,47
+USA,2015,Ransomware,Healthcare,43.81,905935,Unknown,Unpatched Software,VPN,60
+China,2021,Ransomware,Healthcare,56.11,255531,Unknown,Social Engineering,Firewall,17
+Australia,2016,Ransomware,Healthcare,82.99,799581,Nation-state,Zero-day,AI-based Detection,50
+USA,2023,Ransomware,Healthcare,12.79,654947,Insider,Social Engineering,Encryption,23
+UK,2016,Ransomware,Healthcare,61.66,639896,Hacker Group,Social Engineering,VPN,63
+France,2016,Ransomware,Healthcare,34.29,157547,Insider,Unpatched Software,AI-based Detection,29
+Brazil,2019,Ransomware,Healthcare,9.32,785564,Insider,Unpatched Software,Antivirus,70
+Brazil,2021,Ransomware,Healthcare,67.25,796351,Nation-state,Weak Passwords,AI-based Detection,21
+USA,2020,Ransomware,Healthcare,17.24,682791,Insider,Social Engineering,Encryption,44
+Australia,2023,Ransomware,Healthcare,21.54,388211,Nation-state,Weak Passwords,Antivirus,22
+Germany,2021,Ransomware,Healthcare,66.84,242893,Nation-state,Zero-day,Antivirus,50
+France,2020,Ransomware,Healthcare,25.49,50385,Unknown,Unpatched Software,Antivirus,10
+Russia,2017,Ransomware,Healthcare,16.77,924837,Hacker Group,Unpatched Software,Firewall,62
+USA,2018,Ransomware,Healthcare,87.42,80926,Hacker Group,Unpatched Software,Antivirus,19
+India,2018,Ransomware,Healthcare,11.57,144533,Unknown,Social Engineering,Encryption,67
+Russia,2024,Ransomware,Healthcare,63.74,83374,Insider,Zero-day,VPN,45
+India,2020,Ransomware,Healthcare,79.48,461093,Hacker Group,Zero-day,Firewall,42
+China,2024,Ransomware,Healthcare,42.26,685837,Insider,Social Engineering,VPN,68
+India,2023,Ransomware,Healthcare,18.26,312340,Nation-state,Zero-day,VPN,35
+Japan,2016,Ransomware,Healthcare,37.23,209358,Nation-state,Social Engineering,Firewall,25
+Germany,2021,Ransomware,Healthcare,16.64,912847,Unknown,Weak Passwords,Antivirus,27
+Brazil,2017,Ransomware,Healthcare,54.78,469735,Nation-state,Zero-day,Encryption,57
+Germany,2018,Ransomware,Healthcare,14.38,276925,Unknown,Unpatched Software,VPN,54
+France,2022,Ransomware,Healthcare,80.73,964782,Unknown,Weak Passwords,VPN,47
+Russia,2022,Ransomware,Healthcare,16.6,715102,Insider,Zero-day,Antivirus,2
+France,2022,Ransomware,Healthcare,40.36,439046,Insider,Social Engineering,VPN,42
+Australia,2016,Ransomware,Healthcare,47.18,509930,Unknown,Social Engineering,AI-based Detection,68
+Brazil,2017,Ransomware,Healthcare,32.9,433987,Unknown,Zero-day,AI-based Detection,21
+UK,2024,Ransomware,Healthcare,90.37,540353,Hacker Group,Unpatched Software,Antivirus,68
+Russia,2020,Ransomware,Healthcare,11.11,785179,Unknown,Weak Passwords,VPN,2
+Australia,2024,Ransomware,Healthcare,24.21,180760,Nation-state,Weak Passwords,Encryption,34
+Brazil,2018,Ransomware,Healthcare,4.51,909979,Nation-state,Social Engineering,VPN,65
+USA,2019,Ransomware,Healthcare,92.43,206631,Unknown,Zero-day,AI-based Detection,64
+France,2017,Ransomware,Healthcare,88.79,332214,Nation-state,Social Engineering,Antivirus,16
+Russia,2021,Ransomware,Healthcare,85.65,920121,Unknown,Social Engineering,Antivirus,21
+Brazil,2024,Ransomware,Healthcare,60.13,887531,Hacker Group,Social Engineering,Encryption,51
+Brazil,2023,Ransomware,Healthcare,30.45,480773,Hacker Group,Weak Passwords,Encryption,52
+China,2023,Ransomware,Healthcare,62.21,534686,Insider,Unpatched Software,AI-based Detection,44
+China,2022,Ransomware,Healthcare,71.36,712697,Insider,Unpatched Software,AI-based Detection,39
+UK,2017,Ransomware,Healthcare,55.45,490818,Hacker Group,Unpatched Software,VPN,65
+Germany,2015,Ransomware,Healthcare,58.91,801948,Insider,Zero-day,VPN,55
+Australia,2021,Ransomware,Healthcare,37.89,843256,Nation-state,Unpatched Software,Antivirus,43
