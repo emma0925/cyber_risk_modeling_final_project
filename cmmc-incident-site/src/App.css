@@ -108,7 +108,7 @@ body {
 }
 
 .hero {
-  padding: 2.5rem 1.4rem 1.8rem;
+  padding: 0.5rem 1.4rem 0.5rem;
 }
 
 .hero-content {
@@ -275,5 +275,402 @@ body {
 @media (min-width: 768px) {
   .nav-links {
     display: flex;
+  }
+}
+
+/* Critical Assets section */
+
+
+#critical-assets {
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  box-shadow: 0 24px 50px rgba(15, 23, 42, 0.9);
+
+  max-width: 1650px;
+  margin: 0 auto 1.5rem;  /* top 0, bottom 1.5rem, centered */
+}
+
+
+
+#critical-assets h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+#critical-assets h2::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: radial-gradient(circle, var(--accent-bright), var(--accent));
+  box-shadow: 0 0 12px rgba(34, 197, 94, 0.8);
+}
+
+/* Grid of critical asset cards */
+
+.critical-assets-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.critical-asset-card {
+  position: relative;
+  background: radial-gradient(circle at top left, #111827 0, #020617 70%);
+  border-radius: 0.9rem;
+  padding: 0.9rem 1rem;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  box-shadow: 0 18px 35px rgba(15, 23, 42, 0.85);
+  overflow: hidden;
+}
+
+/* Top accent line */
+.critical-asset-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  top: 0;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    var(--accent-bright),
+    var(--accent),
+    #06b6d4
+  );
+  opacity: 0.7;
+}
+
+/* Card content */
+
+.critical-asset-card h3 {
+  margin: 0.2rem 0 0.4rem;
+  font-size: 0.95rem;
+}
+
+.critical-asset-card p {
+  margin: 0 0 0.6rem;
+  font-size: 0.86rem;
+  color: var(--text-muted);
+}
+
+.critical-asset-card ul {
+  list-style: none;
+  margin: 0;
+  padding: 0.55rem 0 0;
+  border-top: 1px solid rgba(148, 163, 184, 0.3);
+  display: grid;
+  row-gap: 0.25rem;
+}
+
+.critical-asset-card li {
+  font-size: 0.82rem;
+  color: var(--text-main);
+  display: flex;
+  justify-content: space-between;
+  gap: 0.6rem;
+}
+
+.critical-asset-card li strong {
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* On wider screens, make the metrics look like two columns */
+@media (min-width: 900px) {
+  .critical-asset-card ul {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* FIPS-199 style table */
+
+.critical-assets-table-wrapper {
+  margin-top: 1.3rem;
+  border-radius: 0.8rem;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  background: radial-gradient(circle at top, #020617 0, #000 100%);
+  box-shadow: 0 22px 45px rgba(15, 23, 42, 0.95);
+  overflow: hidden;
+  overflow-x: auto;
+}
+
+.critical-assets-table {
+  width: 100%;
+  min-width: 680px; /* keeps columns readable on desktop */
+  border-collapse: collapse;
+  font-size: 0.8rem;
+}
+
+.critical-assets-table thead {
+  background: linear-gradient(
+    90deg,
+    rgba(79, 70, 229, 0.65),
+    rgba(56, 189, 248, 0.55)
+  );
+}
+
+.critical-assets-table th,
+.critical-assets-table td {
+  padding: 0.55rem 0.7rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(30, 64, 175, 0.6);
+}
+
+.critical-assets-table th {
+  font-weight: 600;
+  color: #e5e7eb;
+  white-space: nowrap;
+}
+
+.critical-assets-table td {
+  color: var(--text-muted);
+  vertical-align: top;
+}
+
+/* Zebra striping for readability */
+.critical-assets-table tbody tr:nth-child(odd) {
+  background: rgba(15, 23, 42, 0.9);
+}
+
+.critical-assets-table tbody tr:nth-child(even) {
+  background: rgba(15, 23, 42, 0.7);
+}
+
+/* Highlight overall category column a bit more */
+.critical-assets-table td:nth-child(5) {
+  color: var(--accent-bright);
+  font-weight: 600;
+}
+
+/* Make long "Analysis Rationale" text easier to read */
+.critical-assets-table td:last-child {
+  max-width: 320px;
+}
+
+/* On small screens, keep table scrollable instead of squished */
+@media (max-width: 700px) {
+  .critical-assets-table-wrapper {
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
+  }
+}
+
+
+/* NIST 800-53 controls grid */
+
+#controls {
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  box-shadow: 0 24px 50px rgba(15, 23, 42, 0.9);
+
+  max-width: 1650px;
+  margin: 0 auto 1.5rem;  /* top 0, bottom 1.5rem, centered */
+}
+
+.controls-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(305px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+  max-width: 1680;
+  
+}
+
+.control-card {
+  background: radial-gradient(circle at top left, #111827 0, #020617 70%);
+  border-radius: 1rem;
+  padding: 0.9rem 1rem 1.1rem;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  box-shadow: 0 18px 35px rgba(15, 23, 42, 0.85);
+  
+}
+
+.control-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.18rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  background: rgba(34, 197, 94, 0.16);
+  color: #bbf7d0;
+  margin-bottom: 0.45rem;
+  
+}
+
+.control-code {
+  font-weight: 600;
+}
+
+.control-card h3 {
+  margin: 0 0 0.35rem;
+  font-size: 0.95rem;
+}
+
+.control-card p {
+  margin: 0;
+  font-size: 0.86rem;
+  color: var(--text-muted);
+}
+
+
+/* Risk Quantification & ROI */
+
+.risk-strip {
+  margin-top: 0.7rem;
+  margin-bottom: 1.1rem;
+  padding: 0.8rem 1rem;
+  border-radius: 0.9rem;
+  background: radial-gradient(circle at top, #020617 0, #020617 70%);
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  display: grid;
+  grid-template-columns: minmax(0, 2.1fr) auto minmax(0, 2.1fr) auto minmax(0, 1.7fr);
+  align-items: center;
+  column-gap: 0.75rem;
+  font-size: 0.8rem;
+}
+
+.risk-strip-item {
+  min-width: 0;
+}
+
+.risk-strip-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #e5e7eb;
+  margin-bottom: 0.15rem;
+}
+
+.risk-strip-text {
+  color: var(--text-muted);
+}
+
+.risk-strip-text span {
+  color: var(--accent-bright);
+  font-weight: 600;
+}
+
+.risk-strip-monte .risk-strip-label {
+  color: var(--accent-bright);
+}
+
+.risk-strip-x {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #9ca3af;
+}
+
+/* Metrics + chart layout */
+
+.risk-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.4fr);
+  gap: 1.25rem;
+  margin-top: 0.5rem;
+}
+
+.risk-metrics {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.risk-metric-card {
+  display: flex;
+  border-radius: 0.9rem;
+  overflow: hidden;
+  background: radial-gradient(circle at top, #020617 0, #020617 70%);
+  border: 1px solid rgba(55, 65, 81, 0.9);
+}
+
+.risk-metric-bar {
+  width: 4px;
+}
+
+.risk-metric-bar-green {
+  background: linear-gradient(180deg, #4ade80, #22c55e);
+}
+
+.risk-metric-bar-red {
+  background: linear-gradient(180deg, #f97373, #ef4444);
+}
+
+.risk-metric-body {
+  padding: 0.75rem 1rem 0.8rem;
+  flex: 1;
+}
+
+.risk-metric-label {
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #e5e7eb;
+  margin-bottom: 0.25rem;
+}
+
+.risk-metric-values {
+  display: flex;
+  align-items: baseline;
+  gap: 0.35rem;
+  font-size: 0.9rem;
+}
+
+.risk-value-old {
+  color: #9ca3af;
+  text-decoration: line-through;
+}
+
+.risk-value-new {
+  color: #f9fafb;
+  font-weight: 700;
+}
+
+.risk-value-old-red {
+  color: #f97373;
+  text-decoration: line-through;
+}
+
+.risk-value-new-green {
+  color: #bbf7d0;
+  font-weight: 700;
+}
+
+.risk-arrow {
+  color: #9ca3af;
+}
+
+/* Chart */
+
+.risk-chart img {
+  width: 100%;
+  max-width: 100%;
+  border-radius: 0.9rem;
+  border: 1px solid rgba(148, 163, 184, 0.6);
+  background: #020617;
+  display: block;
+}
+
+.risk-chart-caption {
+  margin-top: 0.4rem;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+  .risk-strip {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 0.4rem;
+  }
+
+  .risk-strip-x {
+    display: none;
+  }
+
+  .risk-layout {
+    grid-template-columns: minmax(0, 1fr);
   }
 }

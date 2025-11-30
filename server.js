@@ -17,14 +17,30 @@ app.post("/api/chat", async (req, res) => {
   try {
     const { messages } = req.body;
 
-    // You can prepend a system prompt to keep it on-topic:
+    // 1) Sanitize incoming messages
+    const sanitizedMessages = (Array.isArray(messages) ? messages : [])
+      .filter(
+        (m) =>
+          m &&
+          typeof m.content === "string" &&
+          m.content.trim() !== ""
+      )
+      .map((m) => ({
+        role: m.role || "user",
+        content: m.content.trim(),
+      }));
+
+    // Optional: log what we send to OpenAI for debugging
+    console.log("Sanitized messages:", sanitizedMessages);
+
+    // 2) Prepend system prompt
     const fullMessages = [
       {
         role: "system",
         content:
           "You are a cybersecurity awareness assistant for a medical center called CMMC. You give practical, non-technical explanations about phishing, ransomware, and this specific incident. Here is the recent incident happened to CMMC: An attacker sent a fake “$50 Amazon gift card” email, collected an employee’s CMMC username and password, and used those credentials to log into remote desktop and encrypt shared files. Several shared drives became temporarily unavailable. Operations were disrupted for about 10–12 hours, but systems were restored from backups and no ransom was paid.",
       },
-      ...(messages || []),
+      ...sanitizedMessages,
     ];
 
     const completion = await client.chat.completions.create({
@@ -32,13 +48,41 @@ app.post("/api/chat", async (req, res) => {
       messages: fullMessages,
     });
 
-    const reply = completion.choices[0].message.content;
+    const reply = completion.choices[0]?.message?.content || "";
     res.json({ reply });
   } catch (err) {
-    console.error(err);
+    console.error("Error in /api/chat:", err);
     res.status(500).json({ error: "Error talking to OpenAI" });
   }
 });
+
+
+// app.post("/api/chat", async (req, res) => {
+//   try {
+//     const { messages } = req.body;
+
+//     // You can prepend a system prompt to keep it on-topic:
+//     const fullMessages = [
+//       {
+//         role: "system",
+//         content:
+//           "You are a cybersecurity awareness assistant for a medical center called CMMC. You give practical, non-technical explanations about phishing, ransomware, and this specific incident. Here is the recent incident happened to CMMC: An attacker sent a fake “$50 Amazon gift card” email, collected an employee’s CMMC username and password, and used those credentials to log into remote desktop and encrypt shared files. Several shared drives became temporarily unavailable. Operations were disrupted for about 10–12 hours, but systems were restored from backups and no ransom was paid.",
+//       },
+//       ...(messages || []),
+//     ];
+
+//     const completion = await client.chat.completions.create({
+//       model: "gpt-4.1-mini",
+//       messages: fullMessages,
+//     });
+
+//     const reply = completion.choices[0].message.content;
+//     res.json({ reply });
+//   } catch (err) {
+//     console.error(err);
+//     res.status(500).json({ error: "Error talking to OpenAI" });
+//   }
+// });
 
 
 app.post("/api/login", (req, res) => {

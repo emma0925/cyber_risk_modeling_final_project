@@ -13,15 +13,22 @@ function App() {
             Cyber Incident Awareness &amp; Training Portal
           </div>
         </div>
-        <nav className="nav-links">
-          <a href="#what-happened">What Happened</a>
-          <a href="#impact">Impact</a>
-          <a href="#protect">Protect Yourself</a>
-          <a href="#faq">FAQ</a>
-          <a href="#chatbot">AI Assistant</a>
-          <a href="/cyber_risk_modeling_final_project/cmmc-giftcard.html" 
-          target="_blank" rel="noopener noreferrer"></a>
-        </nav>
+      <nav className="nav-links">
+      <a href="#what-happened">What Happened</a>
+      <a href="#critical-assets">Critical Assets</a>
+      <a href="#impact">Impact</a>
+      <a href="#risk-roi">Risk &amp; ROI</a> {/* NEW */}
+      <a href="#protect">Protect Yourself</a>
+      <a href="#faq">FAQ</a>
+      <a href="#chatbot">AI Assistant</a>
+      <a
+        href="/cyber_risk_modeling_final_project/cmmc-giftcard.html"
+        target="_blank"
+        rel="noopener noreferrer"
+      ></a>
+    </nav>
+
+
       </header>
 
       <main className="main">
@@ -33,44 +40,302 @@ function App() {
               Learn what happened, what we’ve done to respond, and how you can
               help keep CMMC safe from future cyberattacks.
             </p>
-
-            <div className="hero-grid">
-              <div className="hero-card">
-                <h3>What happened?</h3>
-                <p>
-                  An attacker sent a fake “$50 Amazon gift card” email,
-                  collected an employee’s CMMC username and password, and used
-                  those credentials to log into remote desktop and encrypt
-                  shared files.
-                </p>
-              </div>
-              <div className="hero-card">
-                <h3>What it affected</h3>
-                <p>
-                  Several shared drives became temporarily unavailable.
-                  Operations were disrupted for about 10–12 hours, but systems
-                  were restored from backups and no ransom was paid.
-                </p>
-              </div>
-              <div className="hero-card">
-                <h3>How we responded</h3>
-                <p>
-                  We isolated affected systems, disabled the compromised
-                  account, restored from immutable backups, and began rolling
-                  out stronger controls such as MFA and stricter file
-                  permissions.
-                </p>
-              </div>
-            </div>
           </div>
         </section>
+
+
+        {/* Critical Assets – now detailed / FIPS focus */}
+        <section id="critical-assets" className="section-card">
+          <h2>1. Critical Assets at CMMC</h2>
+            <div className="hero-grid">
+              <div className="hero-card">
+                <h3>💿 EHR System</h3>
+                <p>
+                  Central nervous system for all patient data and a prime target
+                  for double-extortion ransomware.
+                </p>
+                <ul>
+                  <li>
+                    <strong>Records:</strong> 2.7B
+                  </li>
+                  <li>
+                    <strong>Daily Transactions:</strong> 43M
+                  </li>
+                  <li>
+                    <strong>Downtime Cost:</strong> $7,900/min
+                  </li>
+                </ul>
+              </div>
+
+              <div className="hero-card">
+                <h3>🗂️ Shared Services</h3>
+                <p>
+                  Active Directory, DNS, and other identity backbone services.
+                  Failure here means an organization-wide blackout.
+                </p>
+                <ul>
+                  <li>
+                    <strong>Domain Controllers:</strong> ~120 DCs
+                  </li>
+                  <li>
+                    <strong>File Shares:</strong> 2–3 PB
+                  </li>
+                  <li>
+                    <strong>Impact:</strong> Total blackout
+                  </li>
+                </ul>
+              </div>
+
+              <div className="hero-card">
+                <h3>🩺 Medical IoT</h3>
+                <p>
+                  Connected monitoring &amp; imaging devices with legacy
+                  segments and weaker controls.
+                </p>
+                <ul>
+                  <li>
+                    <strong>Total Devices:</strong> 490k+
+                  </li>
+                  <li>
+                    <strong>Legacy / Weak:</strong> ≈60k (15%)
+                  </li>
+                  <li>
+                    <strong>Risk:</strong> Clinical freeze
+                  </li>
+                </ul>
+              </div>
+
+              <div className="hero-card">
+                <h3>💵 Billing &amp; Revenue</h3>
+                <p>
+                  Financial engine of CMMC. Disruption triggers major cash-flow
+                  issues even when care continues.
+                </p>
+                <ul>
+                  <li>
+                    <strong>Annual Revenue:</strong> $20–27B
+                  </li>
+                  <li>
+                    <strong>Daily Flow:</strong> $55–75M
+                  </li>
+                  <li>
+                    <strong>Members:</strong> 4.5M
+                  </li>
+                </ul>
+              </div>
+            </div>
+          <p>
+            Some systems are more critical than others. If they fail, the
+            entire organization feels it. The incident mainly hit shared
+            file services, but we map all core assets to understand{" "}
+            <strong>where the real risk lives</strong>.
+          </p>
+
+          <h3 className="critical-assets-subtitle">
+            FIPS-199 Impact Categorization
+          </h3>
+          <p>
+            Using the FIPS-199 standard, we rate each asset on{" "}
+            <strong>Confidentiality, Integrity, and Availability</strong> to
+            determine its overall impact level and where to prioritize
+            controls.
+          </p>
+
+          <div className="critical-assets-table-wrapper">
+            <table className="critical-assets-table">
+              <thead>
+                <tr>
+                  <th>Critical Asset</th>
+                  <th>Confidentiality</th>
+                  <th>Integrity</th>
+                  <th>Availability</th>
+                  <th>Overall Category</th>
+                  <th>Analysis Rationale</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Shared Services (AD / DNS / Core)</td>
+                  <td>Low</td>
+                  <td>High</td>
+                  <td>High</td>
+                  <td>High</td>
+                  <td>
+                    <strong>Existential Risk.</strong> Failure results in an
+                    organization-wide blackout—no logins, no EHR access,
+                    total operational freeze.
+                  </td>
+                </tr>
+                <tr>
+                  <td>EHR System</td>
+                  <td>High</td>
+                  <td>High</td>
+                  <td>High</td>
+                  <td>High</td>
+                  <td>
+                    <strong>Patient Safety.</strong> Unavailability delays
+                    life-saving decisions; leakage compromises privacy
+                    (HIPAA).
+                  </td>
+                </tr>
+                <tr>
+                  <td>Billing Cycle</td>
+                  <td>High</td>
+                  <td>High</td>
+                  <td>Moderate</td>
+                  <td>High</td>
+                  <td>
+                    <strong>Financial Integrity.</strong> Manual workarounds
+                    can cover short outages, but data corruption or leakage
+                    causes unrecoverable loss.
+                  </td>
+                </tr>
+                <tr>
+                  <td>Medical IoT</td>
+                  <td>Low</td>
+                  <td>High</td>
+                  <td>High</td>
+                  <td>High</td>
+                  <td>
+                    <strong>Life Safety.</strong> Compromised integrity
+                    (e.g., dosage) or availability (monitoring) directly
+                    threatens patient lives.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+                    {/* NIST 800-53 Controls */}
+            <section id="controls" className="section-card">
+              <h2>2. Selected NIST 800-53 Controls</h2>
+              <p>
+                These security controls from <strong>NIST SP 800-53</strong> map
+                directly to how CMMC prevents, detects, and responds to incidents
+                like this one.
+              </p>
+
+              <div className="controls-grid">
+                {/* Row 1 */}
+                <div className="control-card">
+                  <div className="control-tag">
+                    <span>💾</span>
+                    <span className="control-code">CP-9</span>
+                  </div>
+                  <h3>System Backups</h3>
+                  <p>
+                    Immutable, offline backups. Critical for recovering systems
+                    without paying ransom.
+                  </p>
+                </div>
+
+                <div className="control-card">
+                  <div className="control-tag">
+                    <span>🧱</span>
+                    <span className="control-code">SC-7</span>
+                  </div>
+                  <h3>Boundary Protection</h3>
+                  <p>
+                    Network segmentation to prevent lateral movement from IoT and
+                    workstations to core servers.
+                  </p>
+                </div>
+
+                <div className="control-card">
+                  <div className="control-tag">
+                    <span>🔑</span>
+                    <span className="control-code">IA-2</span>
+                  </div>
+                  <h3>Identification &amp; Auth</h3>
+                  <p>
+                    Strong authentication (e.g., MFA) for privileged and remote
+                    access to stop credential theft.
+                  </p>
+                </div>
+
+                {/* Row 2 */}
+                <div className="control-card">
+                  <div className="control-tag">
+                    <span>🛡️</span>
+                    <span className="control-code">IR-2 / IR-3</span>
+                  </div>
+                  <h3>Incident Response</h3>
+                  <p>
+                    Documented plans and tabletop exercises reduce confusion and
+                    speed up decision-making during attacks.
+                  </p>
+                </div>
+
+                <div className="control-card">
+                  <div className="control-tag">
+                    <span>👁️</span>
+                    <span className="control-code">SI-4</span>
+                  </div>
+                  <h3>System Monitoring</h3>
+                  <p>
+                    Security monitoring and alerting to detect suspicious activity
+                    before or during encryption.
+                  </p>
+                </div>
+
+                <div className="control-card">
+                  <div className="control-tag">
+                    <span>🧩</span>
+                    <span className="control-code">CM-2 / CM-3</span>
+                  </div>
+                  <h3>Config Management</h3>
+                  <p>
+                    Baselines and patching close known vulnerabilities and reduce
+                    attacker footholds.
+                  </p>
+                </div>
+
+                {/* Row 3 */}
+                <div className="control-card">
+                  <div className="control-tag">
+                    <span>🌐</span>
+                    <span className="control-code">SA-9</span>
+                  </div>
+                  <h3>External Services</h3>
+                  <p>
+                    Vendor access restrictions and contracts to limit supply-chain
+                    and third-party risks.
+                  </p>
+                </div>
+
+                <div className="control-card">
+                  <div className="control-tag">
+                    <span>🎓</span>
+                    <span className="control-code">AT-2</span>
+                  </div>
+                  <h3>Awareness Training</h3>
+                  <p>
+                    Anti-phishing and cyber awareness training to reduce the
+                    success of social-engineering attacks.
+                  </p>
+                </div>
+
+                <div className="control-card">
+                  <div className="control-tag">
+                    <span>👤</span>
+                    <span className="control-code">AC-6</span>
+                  </div>
+                  <h3>Least Privilege</h3>
+                  <p>
+                    Limits user permissions to reduce the blast radius if an
+                    account is compromised.
+                  </p>
+                </div>
+              </div>
+            </section>
 
         {/* 2-column content + chat */}
         <section className="content-layout">
           <div className="content-left">
             {/* What happened */}
-            <section id="what-happened" className="section-card">
-              <h2>1. Detailed Incident Timeline</h2>
+            {/* <section id="what-happened" className="section-card">
+              <h2>2. Detailed Incident Timeline</h2>
               <ol>
                 <li>
                   <strong>Phishing email:</strong> Spoofed HR message promising
@@ -96,11 +361,11 @@ function App() {
                   backups.
                 </li>
               </ol>
-            </section>
+            </section> */}
 
             {/* Impact */}
             <section id="impact" className="section-card">
-              <h2>2. Impact &amp; Risk</h2>
+              <h2>3. Impact &amp; Risk</h2>
               <p>
                 This incident was primarily an{" "}
                 <strong>availability disruption</strong> rather than a
@@ -128,13 +393,119 @@ function App() {
               </p>
             </section>
 
+                        {/* Risk Quantification & ROI */}
+            <section id="risk-roi" className="section-card">
+              <h2>4. Risk Quantification &amp; ROI</h2>
+              <p>
+                Using FAIR-style analysis and Monte Carlo simulation, we can
+                quantify how security controls reduce both expected and
+                worst-case ransomware losses.
+              </p>
+
+              {/* Equation strip */}
+              <div className="risk-strip">
+                <div className="risk-strip-item">
+                  <div className="risk-strip-label">
+                    LOSS EVENT FREQ (LEF)
+                  </div>
+                  <div className="risk-strip-text">
+                    Reduced by <span>Segmentation &amp; MFA</span>
+                  </div>
+                </div>
+
+                <div className="risk-strip-x">×</div>
+
+                <div className="risk-strip-item">
+                  <div className="risk-strip-label">
+                    LOSS MAGNITUDE (LM)
+                  </div>
+                  <div className="risk-strip-text">
+                    Reduced ~30% by <span>Backups &amp; IR</span>
+                  </div>
+                </div>
+
+                <div className="risk-strip-x">=</div>
+
+                <div className="risk-strip-item risk-strip-monte">
+                  <div className="risk-strip-label">Monte Carlo</div>
+                  <div className="risk-strip-text">10,000 iterations</div>
+                </div>
+              </div>
+
+              {/* Metrics + chart layout */}
+              <div className="risk-layout">
+                {/* Left: metrics */}
+                <div className="risk-metrics">
+                  <div className="risk-metric-card">
+                    <div className="risk-metric-bar risk-metric-bar-green" />
+                    <div className="risk-metric-body">
+                      <div className="risk-metric-label">
+                        Expected Annual Loss
+                      </div>
+                      <div className="risk-metric-values">
+                        <span className="risk-value-old">$357M</span>
+                        <span className="risk-arrow">→</span>
+                        <span className="risk-value-new">$174M</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="risk-metric-card">
+                    <div className="risk-metric-bar risk-metric-bar-green" />
+                    <div className="risk-metric-body">
+                      <div className="risk-metric-label">
+                        95th Percentile Loss
+                      </div>
+                      <div className="risk-metric-values">
+                        <span className="risk-value-old">$627M</span>
+                        <span className="risk-arrow">→</span>
+                        <span className="risk-value-new">$330M</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="risk-metric-card">
+                    <div className="risk-metric-bar risk-metric-bar-red" />
+                    <div className="risk-metric-body">
+                      <div className="risk-metric-label">
+                        Loss &lt; $300M Tolerance
+                      </div>
+                      <div className="risk-metric-values">
+                        <span className="risk-value-old risk-value-old-red">
+                          38%
+                        </span>
+                        <span className="risk-arrow">→</span>
+                        <span className="risk-value-new risk-value-new-green">
+                          91.5%
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Right: chart */}
+                <div className="risk-chart">
+                  <img
+                    src="public/risk-roi-histogram.png"
+                    alt="Ransomware annual loss before vs after controls"
+                  />
+                  <p className="risk-chart-caption">
+                    Monte Carlo simulation of annual ransomware loss (non-zero
+                    years), showing the shift from “before” to “after” controls.
+                  </p>
+                </div>
+              </div>
+            </section>
+
+
             {/* Protect yourself */}
             <section id="protect" className="section-card">
-              <h2>3. How to Protect Yourself &amp; CMMC</h2>
+              <h2>4. How to Protect Yourself &amp; CMMC</h2>
               <ul>
                 <li>
-                  Be cautious of <strong>unexpected rewards or gift cards</strong
-                  >, especially those asking you to log in.
+                  Be cautious of{" "}
+                  <strong>unexpected rewards or gift cards</strong>, especially
+                  those asking you to log in.
                 </li>
                 <li>
                   Always check the <strong>website address</strong> before
@@ -145,8 +516,9 @@ function App() {
                   Never reuse your CMMC password on external websites.
                 </li>
                 <li>
-                  Use the organization’s <strong>“Report Phishing”</strong>{" "}
-                  button or contact the helpdesk when in doubt.
+                  Use the organization’s{" "}
+                  <strong>“Report Phishing”</strong> button or contact the
+                  helpdesk when in doubt.
                 </li>
                 <li>
                   If you think you may have entered your credentials on a fake
@@ -156,9 +528,10 @@ function App() {
               </ul>
             </section>
 
+
             {/* FAQ */}
             <section id="faq" className="section-card">
-              <h2>4. Frequently Asked Questions</h2>
+              <h2>5. Frequently Asked Questions</h2>
               <div className="faq-item">
                 <h4>Was patient data stolen?</h4>
                 <p>
@@ -192,7 +565,7 @@ function App() {
           {/* Chatbot column */}
           <aside id="chatbot" className="content-right">
             <div className="chat-card">
-              <h2>5. Ask the AI Cyber-Safety Assistant</h2>
+              <h2>6. Ask the AI Cyber-Safety Assistant</h2>
               <p className="chat-intro">
                 Ask questions about the incident, phishing, or everyday
                 cybersecurity. The assistant is for{" "}
