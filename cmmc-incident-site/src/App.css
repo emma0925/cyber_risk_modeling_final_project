@@ -674,3 +674,27 @@ body {
     grid-template-columns: minmax(0, 1fr);
   }
 }
+
+/* Risk chart container */
+.risk-chart {
+  background: #0a0f1c;
+  border-radius: 1rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* 🔥 Prevents spillover */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Image sizing */
+.risk-chart img,
+.risk-chart-img {
+  width: 100%;        /* 🔥 Fit inside the box */
+  max-width: 880px;   /* Optional limit so it doesn't get huge */
+  height: auto;
+  border-radius: 0.75rem;
+  display: block;
+  object-fit: contain; /* Ensures no cropping or distortion */
+}

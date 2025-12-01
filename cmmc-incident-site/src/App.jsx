@@ -497,6 +497,85 @@ function App() {
               </div>
             </section>
 
+            <section id="ransom-decision" className="section-card">
+              <h2>5. Ransom Payment vs. System Restoration</h2>
+              <p>
+                During a ransomware event, organizations often face a difficult
+                decision: <strong>pay the ransom</strong> or{" "}
+                <strong>restore internally from backups</strong>. Below is how
+                CMMC&rsquo;s security team evaluates these options.
+              </p>
+
+              <div className="ransom-layout">
+                {/* Left: advice card */}
+                <div className="ransom-advice-card">
+                  <div className="ransom-avatar" />
+                  <h3>Advice from Security Analyst Specialist: System Restoration</h3>
+                  <p className="ransom-subtitle"></p>
+                  <p className="ransom-note">
+                    Industry guidance and regulations strongly favor{" "}
+                    <strong>restoring from backups</strong> when feasible.
+                  </p>
+                </div>
+
+                {/* Middle: Paying ransom */}
+                <div className="ransom-option-card">
+                  <div className="ransom-columns">
+                    <div>
+                      <h4>Paying Ransom Risks</h4>
+                      <ul>
+                        <li>~15% of keys fail or only partially restore data.</li>
+                        <li>Decryption can still take several days.</li>
+                        <li>Legal / OFAC exposure depending on the recipient.</li>
+                        <li>Organizations that pay can become repeat targets.</li>
+                        <li>Damages stakeholder trust and reputation.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Right: Restore from backup */}
+                <div className="ransom-option-card">
+                  <h4>System Restoration from Backup</h4>
+                  <ul>
+                    <li>
+                      Aligns with HIPAA, CMS, and state regulatory requirements.
+                    </li>
+                    <li>Remains fully under organizational control.</li>
+                    <li>
+                      Avoids malicious artifacts left behind by attacker tools.
+                    </li>
+                    <li>
+                      Reinforces investment in resilience instead of criminals.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              {/* Bottom: Industry stats */}
+              <div className="ransom-stats-card">
+                <div className="ransom-stats-text">
+                  <h3>Industry Statistics</h3>
+                  <p>
+                    Roughly half of organizations still <strong>pay</strong> at
+                    least some of the time, even though regulators and insurers
+                    increasingly favor <strong>restoration from backup</strong>.
+                  </p>
+                  <div className="ransom-legend">
+                  </div>
+                </div>
+                  <img
+                    src="public/ransom-stats-pie.png"
+                    alt="Ransomware annual loss before vs after controls"
+                    className="risk-chart-img"
+                  />
+                  <p className="risk-chart-caption">
+                    Monte Carlo simulation of annual ransomware loss, showing the shift from
+                    “before” to “after” controls.
+                  </p>
+              </div>
+            </section>
+
 
             {/* Protect yourself */}
             <section id="protect" className="section-card">
